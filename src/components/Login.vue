@@ -28,8 +28,7 @@ export default {
 
     async userLogin(e) {
       e.preventDefault();
-      const hostName = window.location.hostname;
-      const response = await fetch(`//${hostName}:3000/login`, {
+      const response = await fetch('/.netlify/functions/server', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
